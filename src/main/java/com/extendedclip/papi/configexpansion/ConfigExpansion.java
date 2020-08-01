@@ -31,9 +31,9 @@ import me.clip.placeholderapi.expansion.Cacheable;
 import me.clip.placeholderapi.expansion.Configurable;
 import me.clip.placeholderapi.expansion.PlaceholderExpansion;
 
+import org.bukkit.OfflinePlayer;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
-import org.bukkit.entity.Player;
 
 public class ConfigExpansion extends PlaceholderExpansion implements Configurable, Cacheable {
 
@@ -61,7 +61,7 @@ public class ConfigExpansion extends PlaceholderExpansion implements Configurabl
 	}
 
 	@Override
-	public String getPlugin() {
+	public String getRequiredPlugin() {
 		return null;
 	}
 
@@ -76,7 +76,7 @@ public class ConfigExpansion extends PlaceholderExpansion implements Configurabl
 	}
 
 	@Override
-	public String onPlaceholderRequest(Player p, String identifier) {
+	public String onRequest(OfflinePlayer p, String identifier) {
 		
 		int index = identifier.indexOf("_");
 		
